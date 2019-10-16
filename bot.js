@@ -3,22 +3,21 @@ var cool = require('cool-ascii-faces');
 var fetch = require('node-fetch');
 
 var botID = process.env.BOT_ID;
-var myJSON = "";
 
 function weatherBalloon() {
-  var weather = "";
+  var result = "";
   //var cityID = "Statesboro,us";
   //var key = "9403c5022e4b2d80a2bcc5739332adff";
   fetch('https://api.openweathermap.org/data/2.5/weather?q=Statesboro,us&appid=9403c5022e4b2d80a2bcc5739332adff')  
   .then(function(resp) { return resp.json() }) // Convert data to json
   .then(function(data) {
     console.log(data);
-    weather = data.main;
+    var result = JSON.stringify(weatherData.main.temp);
   })
   .catch(function() {
     // catch any errors
   });
-  return weather;
+  return result;
 }
 /*function weatherBalloon() {
   var cityID = "Statesboro,GA";
