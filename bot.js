@@ -6,18 +6,19 @@ var botID = process.env.BOT_ID;
 var myJSON = "";
 
 function weatherBalloon() {
-  var Regexp = //i;
+  var weather = "";
   //var cityID = "Statesboro,us";
   //var key = "9403c5022e4b2d80a2bcc5739332adff";
   fetch('https://api.openweathermap.org/data/2.5/weather?q=Statesboro,us&appid=9403c5022e4b2d80a2bcc5739332adff')  
   .then(function(resp) { return resp.json() }) // Convert data to json
   .then(function(data) {
     console.log(data);
-    myJSON = data;
+    weather = data.main;
   })
   .catch(function() {
     // catch any errors
   });
+  return weather;
 }
 /*function weatherBalloon() {
   var cityID = "Statesboro,GA";
@@ -98,8 +99,7 @@ function respond() {
     }
     else if(Regexp7.test(request.text)){
       this.res.writeHead(200);
-      weatherBalloon();
-      postMessage(myJSON.main);
+      postMessage(weatherBalloon());
       this.res.end();  
     }
     else{
