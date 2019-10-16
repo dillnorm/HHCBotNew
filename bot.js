@@ -3,14 +3,17 @@ var cool = require('cool-ascii-faces');
 var fetch = require('node-fetch');
 
 var botID = process.env.BOT_ID;
+var myJSON = "";
 
 function weatherBalloon() {
+  var Regexp = //i;
   //var cityID = "Statesboro,us";
   //var key = "9403c5022e4b2d80a2bcc5739332adff";
   fetch('https://api.openweathermap.org/data/2.5/weather?q=Statesboro,us&appid=9403c5022e4b2d80a2bcc5739332adff')  
   .then(function(resp) { return resp.json() }) // Convert data to json
   .then(function(data) {
     console.log(data);
+    myJSON = JSON.stringify(data);
   })
   .catch(function() {
     // catch any errors
@@ -102,7 +105,7 @@ function respond() {
     else{
       var w = "What?";
       this.res.writeHead(200);
-      postMessage(w);
+      postMessage(myJSON);
       this.res.end();
     }
   }
