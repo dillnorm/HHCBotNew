@@ -13,6 +13,7 @@ function weatherBalloon() {
   .then(function(data) {
     console.log(data);
     var result = JSON.stringify(data.main.temp);
+          console.log(result);   
   })
   .catch(function() {
     // catch any errors
@@ -98,7 +99,8 @@ function respond() {
     }
     else if(Regexp7.test(request.text)){
       this.res.writeHead(200);
-      postMessage(weatherBalloon());
+      postMessage();
+   
       this.res.end();  
     }
     else{
