@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 
 function weatherBalloon() {
   var cityID = "Statesboro,us";
-  var key = '9403c5022e4b2d80a2bcc5739332adff';
+  var key = "9403c5022e4b2d80a2bcc5739332adff";
   fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID+ '&appid=' + key)  
   .then(function(resp) { return resp.json() }) // Convert data to json
   .then(function(data) {
