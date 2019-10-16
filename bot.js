@@ -99,13 +99,13 @@ function respond() {
     else if(Regexp7.test(request.text)){
       this.res.writeHead(200);
       weatherBalloon();
-      //postMessage(sec);
+      postMessage(myJSON);
       this.res.end();  
     }
     else{
       var w = "What?";
       this.res.writeHead(200);
-      postMessage(myJSON);
+      postMessage(w);
       this.res.end();
     }
   }
