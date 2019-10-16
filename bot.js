@@ -3,7 +3,7 @@ var cool = require('cool-ascii-faces');
 var fetch = require('node-fetch');
 
 var botID = process.env.BOT_ID;
-var myJSON = "";
+var myJSON = "wrong";
 
 function weatherBalloon() {
   var Regexp = //i;
@@ -13,7 +13,7 @@ function weatherBalloon() {
   .then(function(resp) { return resp.json() }) // Convert data to json
   .then(function(data) {
     console.log(data);
-    myJSON = JSON.stringify(data);
+    myJSON = JSON.stringify(data.temp);
   })
   .catch(function() {
     // catch any errors
