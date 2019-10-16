@@ -9,10 +9,10 @@
   "dependencies": {
     "director": "",
     "cool-ascii-faces": "~1.3.x",
-    "node-fetch": "~4.x"
+    "node-fetch": ""
   },
   "engines": {
-    "node": "0.10.x"
+    "node": "4.x"
   },
   "repository": {
     "type": "git",
