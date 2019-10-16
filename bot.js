@@ -12,7 +12,7 @@ function weatherBalloon() {
   .then(function(resp) { return resp.json() }) // Convert data to json
   .then(function(data) {
     console.log(data);
-    var result = JSON.stringify(weatherData.main.temp);
+    var result = weatherData.main.temp;
   })
   .catch(function() {
     // catch any errors
