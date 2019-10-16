@@ -60,7 +60,7 @@ function weatherBalloon() {
 */
 function respond() {
   var request = JSON.parse(this.req.chunks[0]);
- 
+  console.log(request);
   var Regexp = /@Gus/i;
   var Regexp2 = /PT/i;
   var Regexp3 = /Hey/i;
