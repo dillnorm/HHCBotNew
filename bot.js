@@ -77,7 +77,7 @@ function respond() {
         console.log("Testing PT Plan");
         this.res.writeHead(200);
         console.log("Posting PT Plan");
-        postMessage(ptDay());
+        postMessage("@"+request.name+" "+ptDay());
         this.res.end();  
      }
      else if(Regexp3.test(request.text)){
