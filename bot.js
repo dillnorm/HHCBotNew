@@ -1,6 +1,6 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-var fetch = require('node-fetch");
+var fetch = require('node-fetch');
 
 var botID = process.env.BOT_ID;
 
